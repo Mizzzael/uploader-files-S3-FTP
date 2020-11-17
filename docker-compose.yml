@@ -1,0 +1,21 @@
+version: '3.1'
+
+# Nome do Volume Local
+volumes:
+  monaliza-overdrive-data:
+    driver: local
+
+services:
+  # Banco de dados Local
+  db:
+    image: mysql:5.7
+    container_name: monaliza-overdrive
+    volumes:
+      - monaliza-overdrive-data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=galinha
+      - MYSQL_DATABASE=MEL
+      - MYSQL_USER=Nemeses606
+      - MYSQL_PASSWORD=galinha@zzz
