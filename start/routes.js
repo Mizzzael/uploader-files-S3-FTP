@@ -17,3 +17,11 @@
 const Route = use('Route')
 
 Route.on('/').render('welcome')
+Route.group(() => {
+
+  Route.post('/', 'UserController.store');//.validator('UserStore') //.middleware('guest'); //Guest gera
+  Route.post('/login', 'UserController.login').middleware('guest');
+  Route.post('/me', 'UserController.show').middleware('auth');
+
+}).prefix('api/user/');
+
