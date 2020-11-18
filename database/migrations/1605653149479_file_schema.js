@@ -9,7 +9,7 @@ class FileSchema extends Schema {
       table.increments()
       table.string('filename', 254).notNullable();
       table.integer('user_id').unsigned().references('id').inTable('users');
-      table.integer('folder_id').unsigned().references('id').inTable('folders')
+      table.integer('folder_id').unsigned().references('id').inTable('folders');
       table.string('url', 255).notNullable();
       table.timestamps()
     })
